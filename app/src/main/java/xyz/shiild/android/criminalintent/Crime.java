@@ -18,17 +18,20 @@ public class Crime {
      */
     public Crime() {
         // Generate unique identifier
-        mId = UUID.randomUUID();
+        mID = UUID.randomUUID();
     }
 
+    /** UUID getter (read-only). */
     public UUID getID() {
         return mID;
     }
 
+    /** Title getter. */
     public String getTitle() {
         return mTitle;
     }
 
+    /** Title setter. */
     public void setTitle(String title) {
         mTitle = title;
     }
