@@ -3,7 +3,7 @@ package xyz.shiild.android.criminalintent;
 import java.util.UUID;
 
 /**
- *
+ * The model layer for CriminalIntent.
  * @author Stephen
  * @version 6/29/2016
  */
