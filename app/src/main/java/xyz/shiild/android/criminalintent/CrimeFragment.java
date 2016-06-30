@@ -17,11 +17,12 @@ import android.support.v4.app.Fragment;
  * @version 6/30/2016
  */
 public class CrimeFragment extends Fragment {
+    /** Member variable for the Crime instance. */
     private Crime mCrime;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle savedInstanceState) { // Note that Fragment.onCreate is public, to
+        super.onCreate(savedInstanceState);           // allow it to be called by its host fragment.
         mCrime = new Crime();
     }
 }
