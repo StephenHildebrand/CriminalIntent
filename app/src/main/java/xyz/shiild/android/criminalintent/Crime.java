@@ -10,6 +10,8 @@ import java.util.UUID;
 public class Crime {
     /** Unique class identifier. */
     private UUID mID;
+
+
     /** Title of the Crime class. */
     private String mTitle;
 
