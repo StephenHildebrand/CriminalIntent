@@ -1,5 +1,6 @@
 package xyz.shiild.android.criminalintent;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
@@ -10,31 +11,51 @@ import java.util.UUID;
 public class Crime {
     /** Unique class identifier. */
     private UUID mID;
-
-
     /** Title of the Crime class. */
     private String mTitle;
+    /** The date a crime occurred. */
+    private Date mDate;
+    /** Whether the crime has been solved. */
+    private boolean mSolved;
 
     /**
      * Crime class constructor.
      */
     public Crime() {
-        // Generate unique identifier
-        mID = UUID.randomUUID();
+        mID = UUID.randomUUID(); // Generate unique identifier.
+        mDate = new Date(); // Current date via default Date constructor.
     }
 
-    /** UUID getter (read-only). */
+    /**
+     * Field Access Methods .
+     */
     public UUID getID() {
         return mID;
     }
 
-    /** Title getter. */
     public String getTitle() {
         return mTitle;
     }
 
-    /** Title setter. */
     public void setTitle(String title) {
         mTitle = title;
     }
+
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date date) {
+        mDate = date;
+    }
+
+    public boolean isSolved() {
+        return mSolved;
+    }
+
+    public void setSolved(boolean solved) {
+        mSolved = solved;
+    }
+
+    /** End field access methods. */
 }
