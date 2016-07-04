@@ -21,7 +21,7 @@ public class CrimeActivity extends FragmentActivity {
 
         FragmentManager fm = getSupportFragmentManager();
 
-        // Give FragmentManager a fragment to manage.
+        // Give FragmentManager a fragment to manage, retrieved by container view ID
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);
 
         if (fragment == null) {
