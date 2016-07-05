@@ -8,6 +8,9 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 /**
@@ -28,6 +31,10 @@ public class CrimeFragment extends Fragment {
     private Crime mCrime;
     /** Member variable for the EditText instance. */
     private EditText mTitleField;
+    /** The date displayed by the button. */
+    private Button mDateButton;
+    /** The solved/unsolved status. */
+    private CheckBox mSolvedCheckBox;
 
     @Override
     public void onCreate(Bundle savedInstanceState) { // Note that Fragment.onCreate is public, to
@@ -56,18 +63,32 @@ public class CrimeFragment extends Fragment {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 // This space intentionally left blank.
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 mCrime.setTitle(s.toString());
             }
-
             @Override
             public void afterTextChanged(Editable s) {
                 // This one left blank intentionally too.
             }
         });
-        // After the view is inflated, get a reference to the EditText and add a listener.
+
+        /* Set up the date button. */
+        mDateButton = (Button)v.findViewById(R.id.crime_date);
+        // Set its text as the date of the crime.
+        mDateButton.setText(mCrime.getDate().toString());
+        // Disable the button to ensure it won't respond to a user press.
+        mDateButton.setEnabled(false);
+
+        /* Set up the Check box. */
+        mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
+        mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                // Set the crime's solved property.
+                mCrime.setSolved(isChecked);
+            }
+        });
 
         return v;
     }
