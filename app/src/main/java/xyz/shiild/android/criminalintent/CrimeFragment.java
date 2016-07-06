@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewGroupCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Controller class that interacts with model and view objects. Its job is to present
@@ -75,8 +80,10 @@ public class CrimeFragment extends Fragment {
 
         /* Set up the date button. */
         mDateButton = (Button)v.findViewById(R.id.crime_date);
+
         // Set its text as the date of the crime.
-        mDateButton.setText(mCrime.getDate().toString());
+        mDateButton.setText(DateFormat.format("EEEE, MMM d, yyyy.", mCrime.getDate()).toString());
+
         // Disable the button to ensure it won't respond to a user press.
         mDateButton.setEnabled(false);
 
