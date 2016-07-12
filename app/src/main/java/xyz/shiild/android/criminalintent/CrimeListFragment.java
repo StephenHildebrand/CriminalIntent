@@ -48,9 +48,13 @@ public class CrimeListFragment extends Fragment {
 
     /**
      * CrimeHolder is a private inner ViewHolder class for RecyclerView. Finds the title TextView,
-     * date TextView and solved CheckBox.
+     * date TextView and solved CheckBox. By storing the results of calls to findViewById(int) when
+     * it is called in createViewHolder(...), the work is already done for onBindViewHolder(...)
+     * which is important since it is called repeatedly.
      */
     private class CrimeHolder extends RecyclerView.ViewHolder {
+        /** The current Crime. */
+        private Crime mCrime;
         /** The title TextView. */
         private TextView mTitleTextView;
         /** The date TextView. */
@@ -67,6 +71,18 @@ public class CrimeListFragment extends Fragment {
             mTitleTextView = (TextView)itemView.findViewById(R.id.list_item_crime_title_text_view);
             mDateTextView = (TextView)itemView.findViewById(R.id.list_item_crime_date_text_view);
             mSolvedCheckBox = (CheckBox)itemView.findViewById(R.id.list_item_crime_solved_check_box);
+        }
+
+        /**
+         * Use the given Crime to update the title, date, and solved checkbox to reflect the state
+         * of the Crime.
+         * @param crime The current Crime.
+         */
+        public void bindCrime(Crime crime) {
+            mCrime = crime;
+            mTitleTextView.setText(mCrime.getTitle());
+            mDateTextView.setText(mCrime.getDate().toString());
+            mSolvedCheckBox.setChecked(mCrime.isSolved());
         }
     }
 
