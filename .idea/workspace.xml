@@ -92,13 +92,13 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47515705">
-              <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
+            <state vertical-scroll-proportion="0.3592233">
+              <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
               <folding>
-                <element signature="e#2342#2343#0" expanded="true" />
-                <element signature="e#2382#2383#0" expanded="true" />
-                <element signature="e#4052#4053#0" expanded="true" />
-                <element signature="e#4097#4098#0" expanded="true" />
+                <element signature="e#2955#2956#0" expanded="true" />
+                <element signature="e#2995#2996#0" expanded="true" />
+                <element signature="e#4665#4666#0" expanded="true" />
+                <element signature="e#4710#4711#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2378,7 +2378,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468282602702</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Define the inner Adapter class and it's methods.">
+      <created>1468285345458</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1468285345458</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2442,7 +2448,8 @@
     <MESSAGE value="Set CrimeListActivity as the launcher activity." />
     <MESSAGE value="Modified CrimeListFragment to use the newly created fragment_crime_list View." />
     <MESSAGE value="Defined the ViewHolder." />
-    <option name="LAST_COMMIT_MESSAGE" value="Defined the ViewHolder." />
+    <MESSAGE value="Define the inner Adapter class and it's methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Define the inner Adapter class and it's methods." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2902,13 +2909,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47515705">
-          <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.3592233">
+          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
           <folding>
-            <element signature="e#2342#2343#0" expanded="true" />
-            <element signature="e#2382#2383#0" expanded="true" />
-            <element signature="e#4052#4053#0" expanded="true" />
-            <element signature="e#4097#4098#0" expanded="true" />
+            <element signature="e#2955#2956#0" expanded="true" />
+            <element signature="e#2995#2996#0" expanded="true" />
+            <element signature="e#4665#4666#0" expanded="true" />
+            <element signature="e#4710#4711#0" expanded="true" />
           </folding>
         </state>
       </provider>

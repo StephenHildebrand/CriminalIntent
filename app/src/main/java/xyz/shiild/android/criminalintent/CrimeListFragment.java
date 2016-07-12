@@ -17,7 +17,10 @@ import java.util.List;
  * @version 7/10/2016
  */
 public class CrimeListFragment extends Fragment {
+    /** A RecyclerView for viewing the list of Crimes. */
     private RecyclerView mCrimeRecyclerView;
+    /** An Adapter for managing Crimes. */
+    private CrimeAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -25,7 +28,21 @@ public class CrimeListFragment extends Fragment {
         mCrimeRecyclerView = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        updateUI();
         return view;
+    }
+
+    /**
+     * Inner class used to set up CrimeListFragment's user interface by creating a CrimeAdapter and
+     * setting it on the RecyclerView.
+     */
+    private void updateUI() {
+        CrimeLab crimeLab = CrimeLab.get(getActivity());
+        List<Crime> crimes = crimeLab.getCrimes();
+
+        // Create a CrimeAdapter. Set it on the RecyclerView.
+        mAdapter = new CrimeAdapter(crimes);
+        mCrimeRecyclerView.setAdapter(mAdapter);
     }
 
     /**
