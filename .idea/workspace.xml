@@ -28,9 +28,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_24_0_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_24_0_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
@@ -71,7 +68,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-              <folding />
+              <folding>
+                <element signature="e#259#260#0" expanded="false" />
+                <element signature="e#301#302#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,9 +92,14 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42718446">
-              <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
-              <folding />
+            <state vertical-scroll-proportion="0.47515705">
+              <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
+              <folding>
+                <element signature="e#2342#2343#0" expanded="true" />
+                <element signature="e#2382#2383#0" expanded="true" />
+                <element signature="e#4052#4053#0" expanded="true" />
+                <element signature="e#4097#4098#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,7 +132,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#1232#1233#0" expanded="false" />
+                <element signature="e#1262#1263#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2363,7 +2372,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468208415003</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Defined the ViewHolder.">
+      <created>1468282602702</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1468282602702</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2426,7 +2441,8 @@
     <MESSAGE value="New controller class fragment for a CrimeList." />
     <MESSAGE value="Set CrimeListActivity as the launcher activity." />
     <MESSAGE value="Modified CrimeListFragment to use the newly created fragment_crime_list View." />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified CrimeListFragment to use the newly created fragment_crime_list View." />
+    <MESSAGE value="Defined the ViewHolder." />
+    <option name="LAST_COMMIT_MESSAGE" value="Defined the ViewHolder." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2437,7 +2453,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2445,6 +2464,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2481,7 +2501,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2489,6 +2512,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2525,7 +2549,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2533,6 +2560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2569,7 +2597,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2577,6 +2608,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2613,7 +2645,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2621,6 +2656,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2657,7 +2693,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2665,6 +2704,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2701,7 +2741,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2709,6 +2752,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2745,7 +2789,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2753,6 +2800,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2797,6 +2845,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39805827">
           <caret line="74" column="21" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2822,7 +2871,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
+          <folding>
+            <element signature="e#259#260#0" expanded="false" />
+            <element signature="e#301#302#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2850,9 +2902,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42718446">
-          <caret line="29" column="91" selection-start-line="29" selection-start-column="91" selection-end-line="29" selection-end-column="91" />
-          <folding />
+        <state vertical-scroll-proportion="0.47515705">
+          <caret line="87" column="67" selection-start-line="87" selection-start-column="67" selection-end-line="87" selection-end-column="67" />
+          <folding>
+            <element signature="e#2342#2343#0" expanded="true" />
+            <element signature="e#2382#2383#0" expanded="true" />
+            <element signature="e#4052#4053#0" expanded="true" />
+            <element signature="e#4097#4098#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2879,7 +2936,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1232#1233#0" expanded="false" />
+            <element signature="e#1262#1263#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
