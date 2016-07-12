@@ -33,8 +33,8 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
-     * Inner class used to set up CrimeListFragment's user interface by creating a CrimeAdapter and
-     * setting it on the RecyclerView.
+     * Private method used to set up CrimeListFragment's user interface by creating a CrimeAdapter
+     * and setting it on the RecyclerView.
      */
     private void updateUI() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
@@ -62,14 +62,12 @@ public class CrimeListFragment extends Fragment {
         }
     }
 
+
     /**
      * Private inner Adapter class. The RecyclerView will communicate with this adapter when a
-     * ViewHolder needs to be created or connected with a Crime object.
-     *
-     * <p>
-     *     The RecyclerView itself will not know anything about the Crime object, but the Adapter
-     *     will know all of Crime’s intimate and personal details.
-     * </p>
+     * ViewHolder needs to be created or connected with a Crime object. The RecyclerView itself
+     * will not know anything about the Crime object, but the Adapter will know all of Crime’s
+     * intimate and personal details.
      */
     private class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
         /** The list of Crimes. */
@@ -77,6 +75,7 @@ public class CrimeListFragment extends Fragment {
 
         /**
          * Constructor for a CrimeAdapter object used to create a list of Crimes via CrimeHolder.
+         *
          * @param crimes The crimes to initialize with.
          */
         public CrimeAdapter(List<Crime> crimes) {
@@ -89,7 +88,7 @@ public class CrimeListFragment extends Fragment {
          *
          * @param parent The View's parent.
          * @param viewType The type of View.
-         * @return A ViewHolder without any data yet.
+         * @return A ViewHolder without data yet.
          */
         @Override
         public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -97,7 +96,7 @@ public class CrimeListFragment extends Fragment {
             // Inflate a layout, simple_list_item_1 which contains a single TextView, styled to look
             // nice in a list.
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-            View view = layoutInflater.inflate(android.R.layout.simple_list_item_1, parent, false);
+            View view = layoutInflater.inflate(R.layout.list_item_crime, parent, false);
             return new CrimeHolder(view);
         }
 
