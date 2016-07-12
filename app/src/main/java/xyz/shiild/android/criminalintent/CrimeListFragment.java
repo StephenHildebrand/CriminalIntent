@@ -135,8 +135,8 @@ public class CrimeListFragment extends Fragment {
         public void onBindViewHolder(CrimeHolder holder, int position) {
             // Get the Crime at position.
             Crime crime = mCrimes.get(position);
-            // Bind this Crime to the View by sending it's title to the ViewHolder's TextView.
-            holder.mTitleTextView.setText(crime.getTitle());
+            // Use the new bindCrime method to bind the crime to
+            holder.bindCrime(crime);
         }
 
         /**
