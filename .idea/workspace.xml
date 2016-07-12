@@ -76,8 +76,8 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.78640777">
-              <caret line="98" column="71" selection-start-line="98" selection-start-column="71" selection-end-line="98" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.74757284">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2349,7 +2349,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468351293715</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Updated to use the new list_item_crime layout.">
+      <created>1468353470792</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1468353470792</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2416,7 +2422,8 @@
     <MESSAGE value="Define the inner Adapter class and it's methods." />
     <MESSAGE value="Set Adapter on the RecyclerView via updateUI() method." />
     <MESSAGE value="Created a custom list item layout for displaying a crime." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a custom list item layout for displaying a crime." />
+    <MESSAGE value="Updated to use the new list_item_crime layout." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated to use the new list_item_crime layout." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2882,8 +2889,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.78640777">
-          <caret line="98" column="71" selection-start-line="98" selection-start-column="71" selection-end-line="98" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.74757284">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import java.util.List;
@@ -46,19 +47,26 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
-     * Private inner ViewHolder class that maintains a reference to a single view: the title TextView.
+     * CrimeHolder is a private inner ViewHolder class for RecyclerView. Finds the title TextView,
+     * date TextView and solved CheckBox.
      */
     private class CrimeHolder extends RecyclerView.ViewHolder {
-        /** The Title TextView. */
-        public TextView mTitleTextView;
+        /** The title TextView. */
+        private TextView mTitleTextView;
+        /** The date TextView. */
+        private TextView mDateTextView;
+        /** The solved CheckBox. */
+        private CheckBox mSolvedCheckBox;
 
         /**
          * Constructor for a CrimeHolder object.
-         * @param itemView  The itemView to initialize with. Current implementation expects a TextView.
+         * @param itemView  The itemView to initialize with.
          */
         public CrimeHolder(View itemView) {
             super(itemView);
-            mTitleTextView = (TextView) itemView;
+            mTitleTextView = (TextView)itemView.findViewById(R.id.list_item_crime_title_text_view);
+            mDateTextView = (TextView)itemView.findViewById(R.id.list_item_crime_date_text_view);
+            mSolvedCheckBox = (CheckBox)itemView.findViewById(R.id.list_item_crime_solved_check_box);
         }
     }
 
@@ -76,7 +84,7 @@ public class CrimeListFragment extends Fragment {
         /**
          * Constructor for a CrimeAdapter object used to create a list of Crimes via CrimeHolder.
          *
-         * @param crimes The crimes to initialize with.
+         * @param crimes    The crimes to initialize with.
          */
         public CrimeAdapter(List<Crime> crimes) {
             mCrimes = crimes;
@@ -86,9 +94,9 @@ public class CrimeListFragment extends Fragment {
          * Called by the RecyclerView when it needs a new View to display an item. RecyclerView
          * does not expect it to have any data yet.
          *
-         * @param parent The View's parent.
-         * @param viewType The type of View.
-         * @return A ViewHolder without data yet.
+         * @param parent    The View's parent.
+         * @param viewType  The type of View.
+         * @return  A ViewHolder without data yet.
          */
         @Override
         public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -104,8 +112,8 @@ public class CrimeListFragment extends Fragment {
          * Binds a ViewHolder's View to the model object. In order to bind the View, it uses the
          * position to find the right model data, then updates the View to reflect that data.
          *
-         * @param holder The ViewHolder
-         * @param position The position in the data set of the desired model data (Crime).
+         * @param holder    The ViewHolder
+         * @param position  The position in the data set of the desired model data (Crime).
          */
         @Override
         public void onBindViewHolder(CrimeHolder holder, int position) {
