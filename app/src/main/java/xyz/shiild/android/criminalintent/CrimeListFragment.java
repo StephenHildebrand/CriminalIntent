@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -50,9 +51,11 @@ public class CrimeListFragment extends Fragment {
      * CrimeHolder is a private inner ViewHolder class for RecyclerView. Finds the title TextView,
      * date TextView and solved CheckBox. By storing the results of calls to findViewById(int) when
      * it is called in createViewHolder(...), the work is already done for onBindViewHolder(...)
-     * which is important since it is called repeatedly.
+     * which is important since it is called repeatedly. Also implements View.OnClickListener,
+     * for reaction to user touch. Since each View has an associated ViewHolder, the ViewHolder
+     * can be used as the OnClickListener for its View.
      */
-    private class CrimeHolder extends RecyclerView.ViewHolder {
+    private class CrimeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         /** The current Crime. */
         private Crime mCrime;
         /** The title TextView. */
@@ -68,6 +71,7 @@ public class CrimeListFragment extends Fragment {
          */
         public CrimeHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             mTitleTextView = (TextView)itemView.findViewById(R.id.list_item_crime_title_text_view);
             mDateTextView = (TextView)itemView.findViewById(R.id.list_item_crime_date_text_view);
             mSolvedCheckBox = (CheckBox)itemView.findViewById(R.id.list_item_crime_solved_check_box);
@@ -83,6 +87,15 @@ public class CrimeListFragment extends Fragment {
             mTitleTextView.setText(mCrime.getTitle());
             mDateTextView.setText(mCrime.getDate().toString());
             mSolvedCheckBox.setChecked(mCrime.isSolved());
+        }
+
+        /**
+         * Handles how the app should respond to user presses/clicks on a View/ViewHolder.
+         * @param v The clicked View.
+         */
+        @Override
+        public void onClick(View v) {
+            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
         }
     }
 
