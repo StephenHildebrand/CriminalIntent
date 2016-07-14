@@ -17,6 +17,7 @@ import android.widget.EditText;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.UUID;
 
 /**
  * Controller class that interacts with model and view objects. Its job is to present
@@ -32,6 +33,8 @@ import java.util.Locale;
  * @version 6/30/2016
  */
 public class CrimeFragment extends Fragment {
+    /** UUID for the crime arguments bundle. */
+    private static final String ARG_CRIME_ID = "crime_id";
     /** Member variable for the Crime instance. */
     private Crime mCrime;
     /** Member variable for the EditText instance. */
@@ -41,10 +44,23 @@ public class CrimeFragment extends Fragment {
     /** The solved/unsolved status. */
     private CheckBox mSolvedCheckBox;
 
+    public static CrimeFragment newInstance(UUID crimeId) {
+        Bundle args = new Bundle();                     // Create a bundle.
+        args.putSerializable(ARG_CRIME_ID, crimeId);    // Attach the arguments it.
+        CrimeFragment fragment = new CrimeFragment();   // Create a fragment instance.
+        fragment.setArguments(args);                    // Attach the arguments bundle to the it.
+
+        return fragment;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) { // Note that Fragment.onCreate is public, to
         super.onCreate(savedInstanceState);           // allow it to be called by its host fragment.
-        mCrime = new Crime();
+        // Use getIntent to return the Intent that was used to start CrimeActivity. Then call
+        // getSerializable... on it to pull the UUID out into a variable.
+        UUID crimeId = (UUID) getActivity().getIntent().getSerializableExtra(CrimeActivity.EXTRA_CRIME_ID);
+        // Use the retrieved UUID to fetch theCrime from CrimeLab.
+        mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
 
     /**
@@ -63,6 +79,7 @@ public class CrimeFragment extends Fragment {
 
         // Wire up EditText to respond to user input.
         mTitleField = (EditText) v.findViewById(R.id.crime_title);
+        mTitleField.setText(mCrime.getTitle());
         mTitleField.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -89,6 +106,7 @@ public class CrimeFragment extends Fragment {
 
         /* Set up the Check box. */
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
+        mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

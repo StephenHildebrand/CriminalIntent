@@ -99,8 +99,10 @@ public class CrimeListFragment extends Fragment {
         @Override
         public void onClick(View v) {
             // Replace the toast with code that starts an instance of CrimeActivity.
-            // Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(getActivity(), CrimeActivity.class);
+//            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
+//            Intent intent = new Intent(getActivity(), CrimeActivity.class);
+            // Updated CrimeHolder to use the newIntent method while passing in the crime ID.
+            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getID());
             startActivity(intent);
         }
     }
