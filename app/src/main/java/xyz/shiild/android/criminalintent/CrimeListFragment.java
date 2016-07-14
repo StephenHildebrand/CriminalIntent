@@ -1,5 +1,6 @@
 package xyz.shiild.android.criminalintent;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -90,12 +91,17 @@ public class CrimeListFragment extends Fragment {
         }
 
         /**
-         * Handles how the app should respond to user presses/clicks on a View/ViewHolder.
+         * Handles how the app should respond to user presses/clicks on a View/ViewHolder. Creates
+         * an explicit intent that names the CrimeActivity class. Uses the getActivity(0 method to
+         * pass its hosting activity as the Context object needed by the Intent constructor.
          * @param v The clicked View.
          */
         @Override
         public void onClick(View v) {
-            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
+            // Replace the toast with code that starts an instance of CrimeActivity.
+            // Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getActivity(), CrimeActivity.class);
+            startActivity(intent);
         }
     }
 

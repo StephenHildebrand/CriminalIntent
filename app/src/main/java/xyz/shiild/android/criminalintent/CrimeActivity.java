@@ -20,13 +20,14 @@ public class CrimeActivity extends SingleFragmentActivity {
      *
      * @param packageContext    The context of the package.
      * @param crimeId   The crime's Serializable UUID.
-     * @return an Activity for the crime.
+     * @return an Intent with the extra for the for the crime.
      */
     public static Intent newIntent(Context packageContext, UUID crimeId) {
         // Create an explicit Intent.
         Intent intent = new Intent(packageContext, CrimeActivity.class);
         // Put in a string key and the value the key maps to as an Extra.
         intent.putExtra(EXTRA_CRIME_ID, crimeId);
+
         return intent;
     }
 
