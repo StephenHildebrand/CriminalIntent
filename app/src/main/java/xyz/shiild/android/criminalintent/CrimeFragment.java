@@ -56,9 +56,8 @@ public class CrimeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) { // Note that Fragment.onCreate is public, to
         super.onCreate(savedInstanceState);           // allow it to be called by its host fragment.
-        // Use getIntent to return the Intent that was used to start CrimeActivity. Then call
-        // getSerializable... on it to pull the UUID out into a variable.
-        UUID crimeId = (UUID) getActivity().getIntent().getSerializableExtra(CrimeActivity.EXTRA_CRIME_ID);
+        // Retrieve the UUID from the fragment arguments.
+        UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
         // Use the retrieved UUID to fetch theCrime from CrimeLab.
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
     }
