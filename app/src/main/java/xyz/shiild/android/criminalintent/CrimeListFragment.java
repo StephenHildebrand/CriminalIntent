@@ -36,6 +36,15 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
+     * Override onResume() in order to call updateUI() to reload the list.
+     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
+    /**
      * Private method used to set up CrimeListFragment's user interface by creating a CrimeAdapter
      * and setting it on the RecyclerView.
      */
@@ -44,8 +53,13 @@ public class CrimeListFragment extends Fragment {
         List<Crime> crimes = crimeLab.getCrimes();
 
         // Create a CrimeAdapter. Set it on the RecyclerView.
-        mAdapter = new CrimeAdapter(crimes);
-        mCrimeRecyclerView.setAdapter(mAdapter);
+        if (mAdapter == null) {
+            mAdapter = new CrimeAdapter(crimes);
+            mCrimeRecyclerView.setAdapter(mAdapter);
+        } else {    // If CrimeAdapter is already made, then reload it instead.
+            mAdapter.notifyDataSetChanged();
+        }
+
     }
 
     /**
