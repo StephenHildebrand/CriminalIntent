@@ -117,7 +117,7 @@ public class CrimeListFragment extends Fragment {
 //            Intent intent = new Intent(getActivity(), CrimeActivity.class);
             // Updated CrimeHolder to use the newIntent method while passing in the crime ID.
             Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getID());
-            startActivity(intent);
+            startActivity(intent); // To get results back, would call startActivityForResult(...)
         }
     }
 
