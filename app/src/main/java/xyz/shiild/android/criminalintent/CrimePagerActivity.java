@@ -72,5 +72,14 @@ public class CrimePagerActivity extends FragmentActivity {
                 return mCrimes.size();
             }
         });
+
+        // By default, ViewPager shows the first item in its PagerAdapter
+        // Find the index of the Crime to display by looping through and matching the crime's ID.
+        for (int i = 0; i < mCrimes.size(); i++)
+            // When the Crime instance is found, set the current item to the index of that crime
+            if (mCrimes.get(i).getId().equals(crimeId)) {
+                mViewPager.setCurrentItem(i);
+                break;
+            }
     }
 }
