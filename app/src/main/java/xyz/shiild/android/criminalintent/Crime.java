@@ -10,7 +10,7 @@ import java.util.UUID;
  */
 public class Crime {
     /** Unique class identifier. */
-    private UUID mID;
+    private UUID mId;
     /** Title of the Crime class. */
     private String mTitle;
     /** The date a crime occurred. */
@@ -22,15 +22,15 @@ public class Crime {
      * Crime class constructor.
      */
     public Crime() {
-        mID = UUID.randomUUID(); // Generate unique identifier.
+        mId = UUID.randomUUID(); // Generate unique identifier.
         mDate = new Date(); // Current date via default Date constructor.
     }
 
     /**
-     * Field Access Methods .
+     * Field Access Methods.
      */
-    public UUID getID() {
-        return mID;
+    public UUID getId() {
+        return mId;
     }
 
     public String getTitle() {
@@ -57,5 +57,4 @@ public class Crime {
         mSolved = solved;
     }
 
-    /** End field access methods. */
 }

@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -45,27 +44,31 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
-     * Private method used to set up CrimeListFragment's user interface by creating a CrimeAdapter
-     * and setting it on the RecyclerView.
+     * Private method used to set up CrimeListFragment's user interface by creating a
+     * CrimeAdapter and setting it on the RecyclerView. Creates a CrimeAdapter and sets it
+     * on the RecyclerView. If CrimeAdapter is already made, then it's reloaded instead.
      */
     private void updateUI() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
         List<Crime> crimes = crimeLab.getCrimes();
 
-        // Create a CrimeAdapter. Set it on the RecyclerView.
         if (mAdapter == null) {
-            mAdapter = new CrimeAdapter(crimes);
-            mCrimeRecyclerView.setAdapter(mAdapter);
-        } else {    // If CrimeAdapter is already made, then reload it instead.
+            mAdapter = new CrimeAdapter(crimes);    // Create a CrimeAdapter.
+            mCrimeRecyclerView.setAdapter(mAdapter);    // Set it on the RecyclerView.
+        } else {    // Reload it instead.
+            // Using notifyDataSetChanged() method is easy but extremely inefficient.
             mAdapter.notifyDataSetChanged();
+            // Use RecyclerView.Adapter's notifyItemChanged(int) to reload a single list item.
+            // First must determine which position has changed and reload the correct item.
+//            mAdapter.notifyItemChanged(mPosition);
         }
-
     }
 
     /**
-     * CrimeHolder is a private inner ViewHolder class for RecyclerView. Finds the title TextView,
-     * date TextView and solved CheckBox. By storing the results of calls to findViewById(int) when
-     * it is called in createViewHolder(...), the work is already done for onBindViewHolder(...)
+     *
+     * CrimeHolder is a private inner ViewHolder class for RecyclerView. It finds the title TextView,
+     * date TextView and solved CheckBox. By storing the results of calls to findViewById(int)
+     * when called in createViewHolder(...), the work is already done for onBindViewHolder(...)
      * which is important since it is called repeatedly. Also implements View.OnClickListener,
      * for reaction to user touch. Since each View has an associated ViewHolder, the ViewHolder
      * can be used as the OnClickListener for its View.
@@ -105,18 +108,17 @@ public class CrimeListFragment extends Fragment {
         }
 
         /**
-         * Handles how the app should respond to user presses/clicks on a View/ViewHolder. Creates
-         * an explicit intent that names the CrimeActivity class. Uses the getActivity(0 method to
-         * pass its hosting activity as the Context object needed by the Intent constructor.
+         * Handles how the app should respond to user presses/clicks on a View/ViewHolder.
+         * Creates an explicit intent that names the CrimePagerActivity class. Uses the
+         * getActivity() method to pass its hosting activity as the Context object needed
+         * by the Intent constructor.
+         *
          * @param v The clicked View.
          */
         @Override
         public void onClick(View v) {
-            // Replace the toast with code that starts an instance of CrimeActivity.
-//            Toast.makeText(getActivity(), mCrime.getTitle() + " clicked!", Toast.LENGTH_SHORT).show();
-//            Intent intent = new Intent(getActivity(), CrimeActivity.class);
             // Updated CrimeHolder to use the newIntent method while passing in the crime ID.
-            Intent intent = CrimeActivity.newIntent(getActivity(), mCrime.getID());
+            Intent intent = CrimePagerActivity.newIntent(getActivity(), mCrime.getId());
             startActivity(intent); // To get results back, would call startActivityForResult(...)
         }
     }
@@ -152,8 +154,8 @@ public class CrimeListFragment extends Fragment {
         @Override
         public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             // Create the View, wrap it in a ViewHolder.
-            // Inflate a layout, simple_list_item_1 which contains a single TextView, styled to look
-            // nice in a list.
+            // Inflate a layout, simple_list_item_1 which contains a single TextView, styled to
+            // look nice in a list.
             LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
             View view = layoutInflater.inflate(R.layout.list_item_crime, parent, false);
             return new CrimeHolder(view);
@@ -174,11 +176,11 @@ public class CrimeListFragment extends Fragment {
             holder.bindCrime(crime);
         }
 
-        /**
-         * Get the count of crimes in the list. */
+        /** Get the count of crimes in the list. */
         @Override
         public int getItemCount() {
             return mCrimes.size();
         }
+
     }
 }
