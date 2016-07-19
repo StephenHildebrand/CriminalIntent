@@ -2,6 +2,7 @@ package xyz.shiild.android.criminalintent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewGroupCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -35,6 +36,8 @@ import java.util.UUID;
 public class CrimeFragment extends Fragment {
     /** UUID for the crime arguments bundle. */
     private static final String ARG_CRIME_ID = "crime_id";
+    /** Constant for the DatePickerFragment's tag. */
+    private static final String DIALOG_DATE = "DialogDate";
     /** Member variable for the Crime instance. */
     private Crime mCrime;
     /** Member variable for the EditText instance. */
@@ -100,8 +103,16 @@ public class CrimeFragment extends Fragment {
         // Set its text as the date of the crime.
         mDateButton.setText(DateFormat.format("EEEE, MMM d, yyyy.", mCrime.getDate()).toString());
 
-        // Disable the button to ensure it won't respond to a user press.
-        mDateButton.setEnabled(false);
+        // Set a View.OnClickListener that shows a DatePickerFragment when date button is pressed.
+        mDateButton.setOnClickListener(new View.OnClickListener() {
+            // Pass in a FragmentManager (the FragmentTransaction will be automatically created).
+            @Override
+            public void onClick(View v) {
+                FragmentManager manager = getFragmentManager();
+                DatePickerFragment dialog = new DatePickerFragment();
+                dialog.show(manager, DIALOG_DATE);
+            }
+        });
 
         /* Set up the Check box. */
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
