@@ -38,6 +38,9 @@ public class CrimeFragment extends Fragment {
     private static final String ARG_CRIME_ID = "crime_id";
     /** Constant for the DatePickerFragment's tag. */
     private static final String DIALOG_DATE = "DialogDate";
+    /** Constant for the date request code. */
+    private static final int REQUEST_DATE = 0;
+
     /** Member variable for the Crime instance. */
     private Crime mCrime;
     /** Member variable for the EditText instance. */
@@ -110,6 +113,9 @@ public class CrimeFragment extends Fragment {
             public void onClick(View v) {
                 FragmentManager manager = getFragmentManager();
                 DatePickerFragment dialog = new DatePickerFragment().newInstance(mCrime.getDate());
+
+                // Make CrimeFragment the target fragment of the DatePickerFragment instance.
+                dialog.setTargetFragment(CrimeFragment.this, REQUEST_DATE);
                 dialog.show(manager, DIALOG_DATE);
             }
         });

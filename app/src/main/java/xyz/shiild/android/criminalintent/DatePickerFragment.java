@@ -1,6 +1,9 @@
 package xyz.shiild.android.criminalintent;
 
+import android.app.Activity;
 import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
@@ -10,6 +13,7 @@ import android.widget.DatePicker;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  *
@@ -17,6 +21,8 @@ import java.util.Date;
  * @version 7/16/2016
  */
 public class DatePickerFragment extends DialogFragment {
+    /** Id for the extra intent argument. */
+    public static final String EXTRA_DATE = "xyz.shiild.android.criminalintent.date";
     /** Id for the date argument.  */
     private static final String ARG_DATE = "date";
     /** The DatePicker object. */
@@ -26,17 +32,6 @@ public class DatePickerFragment extends DialogFragment {
      * To get data into the DatePickerFragment, the date is stashed in its arguments bundle
      * where it is able to be accessed. The arguments are created and set in the newInstance()
      * method which replaces the fragment constructor.
-     *
-     # Adobe Blocker
-     127.0.0.1 lmlicenses.wip4.adobe.com
-     127.0.0.1 lm.licenses.adobe.com
-     127.0.0.1 na1r.services.adobe.com
-     127.0.0.1 hlrcv.stage.adobe.com
-     127.0.0.1 practivate.adobe.com
-     127.0.0.1 activate.adobe.com
-
-     # Malwarebytes Blocker
-     0.0.0.0 keystone.mwbsys.com
      *
      * @param date The date of the crime.
      * @return The Fragment now containing the bundle in its arguments.
@@ -66,9 +61,11 @@ public class DatePickerFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Initialize the DatePicker using the timestamp info held in the Date.
         Date date = (Date)getArguments().getSerializable(ARG_DATE);
+
         // Create calendar object using the Date to configure it.
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
+
         // Retrieve the needed info from the calendar.
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
@@ -84,9 +81,37 @@ public class DatePickerFragment extends DialogFragment {
         return new AlertDialog.Builder(getActivity())
                 .setView(v) // Set the dialog's View.
                 .setTitle(R.string.date_picker_title)   // Set the dialog's Title.
-                .setPositiveButton(android.R.string.ok, null) // Set the dialog's positive Button.
+                // Set the dialog's positive Button.
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                    /**
+                     * Retrieve the selected date and call sendResult.
+                     *
+                     * @param dialog The dialog to create.
+                     * @param which The type of dialog.
+                     */
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        int year = mDatePicker.getYear();
+                        int month = mDatePicker.getMonth();
+                        int day = mDatePicker.getDayOfMonth();
+                        Date date = new GregorianCalendar(year, month, day).getTime();
+                        sendResult(Activity.RESULT_OK, date);
+                    }
+                })
                 .create();  // Create the dialog.
+    }
 
-
+    /**
+     * Creates an intent, puts it as an extra then calls CrimeFragment.onActivityResult(...).
+     *
+     * @param resultCode The code used to determine which what action to take.
+     * @param date The date of the crime.
+     */
+    private void sendResult(int resultCode, Date date) {
+        if (getTargetFragment() == null)
+            return;
+        Intent intent = new Intent();
+        intent.putExtra(EXTRA_DATE, date);
+        getTargetFragment().onActivityResult(getTargetRequestCode(), resultCode, intent);
     }
 }
