@@ -16,6 +16,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
+ * Dialog Fragment that allows the user to select what time of day the crime occurred using a
+ * DatePicker widget.
  *
  * @author Stephen Hildebrand
  * @version 7/16/2016
