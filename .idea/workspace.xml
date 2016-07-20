@@ -35,11 +35,8 @@
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/TimePickerFragment.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_time.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_date.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_date.xml" />
     </list>
     <ignored path="CriminalIntent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2545,7 +2542,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468976215784</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added comments and cleaned code.">
+      <created>1469034039297</created>
+      <option name="number" value="00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1469034039297</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2595,7 +2598,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Set CrimeListActivity as the launcher activity." />
     <MESSAGE value="Modified CrimeListFragment to use the newly created fragment_crime_list View." />
     <MESSAGE value="Defined the ViewHolder." />
     <MESSAGE value="Define the inner Adapter class and it's methods." />
@@ -2620,7 +2622,8 @@
     <MESSAGE value="12.7 Extracted the date and initialized DatePicker." />
     <MESSAGE value="12.10 Implemented DialogInterface.OnClickListener to retrieve the selected date and call sendResult." />
     <MESSAGE value="12.12 Cleaned up by extracting the method updateDate()." />
-    <option name="LAST_COMMIT_MESSAGE" value="12.12 Cleaned up by extracting the method updateDate()." />
+    <MESSAGE value="Added comments and cleaned code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments and cleaned code." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

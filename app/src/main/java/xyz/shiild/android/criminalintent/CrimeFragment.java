@@ -122,7 +122,7 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        /* Set up the Check box. */
+        // Set up the Check box.
         mSolvedCheckBox = (CheckBox)v.findViewById(R.id.crime_solved);
         mSolvedCheckBox.setChecked(mCrime.isSolved());
         mSolvedCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -154,6 +154,7 @@ public class CrimeFragment extends Fragment {
         }
     }
 
+    /** Private method for updating the date text on a button. */
     private void updateDate() {
         mDateButton.setText(mCrime.getDate().toString());
     }
