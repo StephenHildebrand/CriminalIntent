@@ -1,5 +1,7 @@
 package xyz.shiild.android.criminalintent;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +20,7 @@ import android.widget.EditText;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Set;
 import java.util.UUID;
 
 /**
@@ -100,11 +103,10 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        /* Set up the date button. */
+        // Set up the date button.
         mDateButton = (Button)v.findViewById(R.id.crime_date);
-
         // Set its text as the date of the crime.
-        mDateButton.setText(DateFormat.format("EEEE, MMM d, yyyy.", mCrime.getDate()).toString());
+        updateDate();
 
         // Set a View.OnClickListener that shows a DatePickerFragment when date button is pressed.
         mDateButton.setOnClickListener(new View.OnClickListener() {
@@ -132,5 +134,27 @@ public class CrimeFragment extends Fragment {
         });
 
         return v;
+    }
+
+    /**
+     * Retrieve the extra, set the date on the Crime, and refresh the text of the date button.
+     *
+     * @param requestCode Code ID for the request.
+     * @param resultCode Code ID for the result.
+     * @param data The date.
+     */
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != Activity.RESULT_OK)
+            return;
+        if (requestCode == REQUEST_DATE) {
+            Date date = (Date)data.getSerializableExtra(DatePickerFragment.EXTRA_DATE);
+            mCrime.setDate(date);
+            updateDate();
+        }
+    }
+
+    private void updateDate() {
+        mDateButton.setText(mCrime.getDate().toString());
     }
 }

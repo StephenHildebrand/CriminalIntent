@@ -35,7 +35,6 @@
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java" />
     </list>
     <ignored path="CriminalIntent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,22 +75,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="CrimeFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CrimeFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
-              <folding />
+            <state vertical-scroll-proportion="0.26898915">
+              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+              <folding>
+                <element signature="e#6576#6577#0" expanded="true" />
+                <element signature="e#6640#6641#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatePickerFragment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DatePickerFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6710451">
-              <caret line="89" column="55" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="76" column="86" selection-start-line="76" selection-start-column="86" selection-end-line="76" selection-end-column="86" />
               <folding>
+                <element signature="e#3444#4217#0" expanded="true" />
                 <element signature="e#4216#4217#0" expanded="true" />
               </folding>
             </state>
@@ -1738,8 +1741,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimePagerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_date.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java" />
       </list>
     </option>
   </component>
@@ -1899,6 +1902,7 @@
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.WIDTH" value="402" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RunManager" selected="Android Application.app">
     <configuration default="true" type="AndroidNativeRunConfigurationType" factoryName="Android Native">
@@ -2423,7 +2427,13 @@
       <option name="project" value="LOCAL" />
       <updated>1468956428603</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="12.10 Implemented DialogInterface.OnClickListener to retrieve the selected date and call sendResult.">
+      <created>1468973120602</created>
+      <option name="number" value="00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1468973120602</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2473,7 +2483,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Set CrimeActivity as sublcass of new SingleFragmentActivity abstract class." />
     <MESSAGE value="New controller class fragment for a CrimeList." />
     <MESSAGE value="Set CrimeListActivity as the launcher activity." />
     <MESSAGE value="Modified CrimeListFragment to use the newly created fragment_crime_list View." />
@@ -2498,7 +2507,8 @@
     <MESSAGE value="12.2 Created DatePickerFragment extends DialogFragment class and defined onCreateDialog(Bundle)." />
     <MESSAGE value="12.4 Added the DatePicker to the AlertDialog" />
     <MESSAGE value="12.7 Extracted the date and initialized DatePicker." />
-    <option name="LAST_COMMIT_MESSAGE" value="12.7 Extracted the date and initialized DatePicker." />
+    <MESSAGE value="12.10 Implemented DialogInterface.OnClickListener to retrieve the selected date and call sendResult." />
+    <option name="LAST_COMMIT_MESSAGE" value="12.10 Implemented DialogInterface.OnClickListener to retrieve the selected date and call sendResult." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -2937,20 +2947,24 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="33" selection-start-line="84" selection-start-column="33" selection-end-line="84" selection-end-column="33" />
-          <folding />
+          <caret line="76" column="86" selection-start-line="76" selection-start-column="86" selection-end-line="76" selection-end-column="86" />
+          <folding>
+            <element signature="e#3444#4217#0" expanded="true" />
+            <element signature="e#4216#4217#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/DatePickerFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6710451">
-          <caret line="89" column="55" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.26898915">
+          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding>
-            <element signature="e#4216#4217#0" expanded="true" />
+            <element signature="e#6576#6577#0" expanded="true" />
+            <element signature="e#6640#6641#0" expanded="true" />
           </folding>
         </state>
       </provider>
