@@ -39,10 +39,15 @@ import java.util.UUID;
 public class CrimeFragment extends Fragment {
     /** UUID for the crime arguments bundle. */
     private static final String ARG_CRIME_ID = "crime_id";
-    /** Constant for the DatePickerFragment's tag. */
+    /** Date constant for the DatePickerFragment's tag. */
     private static final String DIALOG_DATE = "DialogDate";
-    /** Constant for the date request code. */
+    /** Date constant for the date request code. */
     private static final int REQUEST_DATE = 0;
+    /** Time constant for TimePickerFragment's tag. */
+    private static final String DIALOG_TIME = "DialogTime";
+    /** Time constant for the time request code. */
+    private static final int REQUEST_TIME = 1;
+
 
     /** Member variable for the Crime instance. */
     private Crime mCrime;
@@ -50,6 +55,8 @@ public class CrimeFragment extends Fragment {
     private EditText mTitleField;
     /** The date displayed by the button. */
     private Button mDateButton;
+    /** The time displayed by the button. */
+    private Button mTimeButton;
     /** The solved/unsolved status. */
     private CheckBox mSolvedCheckBox;
 
@@ -58,7 +65,6 @@ public class CrimeFragment extends Fragment {
         args.putSerializable(ARG_CRIME_ID, crimeId);    // Attach the arguments it.
         CrimeFragment fragment = new CrimeFragment();   // Create a fragment instance.
         fragment.setArguments(args);                    // Attach the arguments bundle to the it.
-
         return fragment;
     }
 
@@ -103,9 +109,10 @@ public class CrimeFragment extends Fragment {
             }
         });
 
-        // Set up the date button.
+        // Set up the date and time buttons.
         mDateButton = (Button)v.findViewById(R.id.crime_date);
-        // Set its text as the date of the crime.
+        mTimeButton = (Button)v.findViewById(R.id.crime_time);
+        // Set the text as the date and the time of the crime.
         updateDate();
 
         // Set a View.OnClickListener that shows a DatePickerFragment when date button is pressed.
