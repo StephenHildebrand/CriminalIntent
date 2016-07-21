@@ -68,7 +68,7 @@ public class DatePickerFragment extends DialogFragment {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
 
-        // Retrieve the date data from the calendar.
+        // Retrieve the needed info from the calendar.
         int year = calendar.get(Calendar.YEAR);
         int month = calendar.get(Calendar.MONTH);
         int day = calendar.get(Calendar.DAY_OF_MONTH);
