@@ -4,13 +4,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * Abstract class for implementation an activity with a single fragment.
  * @author Stephen Hildebrand
  * @version 7/7/2016
  */
-public abstract class SingleFragmentActivity extends FragmentActivity {
+public abstract class SingleFragmentActivity extends AppCompatActivity {
     /**
      * An abstract method called by subclasses to instantiate the fragment.
      *
