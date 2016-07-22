@@ -2,12 +2,15 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Action item to add a list item. -->
     <item
         android:id="@+id/menu_item_new_crime"
         android:icon="@drawable/ic_menu_add"
         android:title="@string/new_crime"
         app:showAsAction="ifRoom|withText"/>
-    <!-- showAsAction attribute refers to whether
-        the item will appear in the toolbar
-        itself or in the overflow menu. -->
+    <!-- Action item to let users show/hide the subtitle.  -->
+    <item
+        android:id="@+id/menu_item_show_subtitle"
+        android:title="@string/show_subtitle"
+        app:showAsAction="ifRoom"/>
 </menu>
