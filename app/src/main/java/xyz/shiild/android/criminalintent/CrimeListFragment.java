@@ -66,7 +66,7 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
-     * Handle selection of menu items (currently only add crime option).
+     * Handle selection of menu items (currently only the add crime option).
      *
      * @param item  The selected menu item.
      * @return  True to indicate that no further processing is necessary
