@@ -3,6 +3,7 @@ package xyz.shiild.android.criminalintent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -74,15 +75,32 @@ public class CrimeListFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_item_new_crime:  //
+            case R.id.menu_item_new_crime:          // New Crime action button.
                 Crime crime = new Crime();
                 CrimeLab.get(getActivity()).addCrime(crime);
                 Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
                 startActivity(intent);
                 return true;
+            case R.id.menu_item_show_subtitle:      // Show Subtitle action button
+                updateSubtitle();
+                return true;
             default:    // Calls the superclass if the item ID isn't in your implementation.
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    /**
+     * Sets the subtitle of the toolbar. The subtitle displays the number of crimes in
+     * CriminalIntent. Called when the user presses on the new subtitle action item.
+     */
+    private void updateSubtitle() {
+        CrimeLab crimeLab = CrimeLab.get(getActivity());
+        int crimeCount = crimeLab.getCrimes().size();
+        // Generate the subtitle string with replacement values for the placeholders.
+        String subtitle = getString(R.string.subtitle_format, crimeCount);
+        // Cast the activity hosting CrimeListFragment to an AppCompatActivity and set it.
+        AppCompatActivity activity = (AppCompatActivity)getActivity();
+        activity.getSupportActionBar().setSubtitle(subtitle);
     }
 
     /**

@@ -37,7 +37,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
     <ignored path="CriminalIntent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,12 +78,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="77" selection-start-line="97" selection-start-column="77" selection-end-line="97" selection-end-column="77" />
-              <folding />
+            <state vertical-scroll-proportion="0.47515705">
+              <caret line="96" column="50" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="50" />
+              <folding>
+                <element signature="e#3637#3684#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_crime_list.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fragment_crime_list.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2619883">
-              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+            <state vertical-scroll-proportion="-11.707317">
+              <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
               <folding>
                 <element signature="e#333#352#0" expanded="true" />
                 <element signature="e#543#566#0" expanded="true" />
@@ -1755,10 +1757,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimePagerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeLab.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
       </list>
     </option>
   </component>
@@ -2323,12 +2325,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00006" summary="Updated the date displayed on Button to a more readable version.">
-      <created>1467833237921</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1467833237921</updated>
-    </task>
     <task id="LOCAL-00007" summary="Completed CrimeLab through Listing 9.3">
       <created>1467921828404</created>
       <option name="number" value="00007" />
@@ -2617,7 +2613,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469204927047</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="13.14 Added &quot;Show Subtitle&quot; action item.">
+      <created>1469212751615</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1469212751615</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2667,7 +2669,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Put an Intent as an extra with the crime's ID." />
     <MESSAGE value="Listing 10.6...wrote a newInstance(UUID) method." />
     <MESSAGE value="Update to retrieve UUID from new fragment arguments." />
     <MESSAGE value="Updated to reload the list when returning from a CrimeActivity." />
@@ -2692,7 +2693,8 @@
     <MESSAGE value="13.13 Turned on the Up button." />
     <MESSAGE value="Updated compile SDK version and dependencies to 24.1.1" />
     <MESSAGE value="Updated compile and target SDK version and dependencies to 24.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated compile and target SDK version and dependencies to 24.1.1" />
+    <MESSAGE value="13.14 Added &quot;Show Subtitle&quot; action item." />
+    <option name="LAST_COMMIT_MESSAGE" value="13.14 Added &quot;Show Subtitle&quot; action item." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3079,14 +3081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="77" selection-start-line="97" selection-start-column="77" selection-end-line="97" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29163215">
@@ -3129,11 +3123,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/fragment_crime_list.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2619883">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+        <state vertical-scroll-proportion="-11.707317">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding>
             <element signature="e#333#352#0" expanded="true" />
             <element signature="e#543#566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47515705">
+          <caret line="96" column="50" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="50" />
+          <folding>
+            <element signature="e#3637#3684#0" expanded="true" />
           </folding>
         </state>
       </provider>
