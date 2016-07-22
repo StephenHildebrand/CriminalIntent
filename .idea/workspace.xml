@@ -33,10 +33,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
     <ignored path="CriminalIntent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2269,12 +2267,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added date and a boolean to Crime class.">
-      <created>1467666585299</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1467666585299</updated>
-    </task>
     <task id="LOCAL-00004" summary="Updated layout to contain 2 TextView, 1 Button and 1 CheckBox.">
       <created>1467680039575</created>
       <option name="number" value="00004" />
@@ -2563,7 +2555,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469155794200</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="13.12 Defined onOptionsItemSelected() method to respond to menu selection to add a crime.">
+      <created>1469204364679</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1469204364680</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="ToolWindowManager">
