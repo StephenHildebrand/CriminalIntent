@@ -24,7 +24,6 @@ public class CrimeLab {
      */
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
-        // Initialize the list with 100 Crimes.
     }
 
     public static CrimeLab get(Context context) {
