@@ -35,7 +35,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="13.21 Saved subtitle visibility across rotations. Also wrapped updateSubtitle() method's call to activity.getSupportActionBar within a null check.">
+    <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CriminalIntent.iws" />
@@ -2336,12 +2336,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00012" summary="Set CrimeListActivity as the launcher activity.">
-      <created>1468200621996</created>
-      <option name="number" value="00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1468200621996</updated>
-    </task>
     <task id="LOCAL-00013" summary="Modified CrimeListFragment to use the newly created fragment_crime_list View.">
       <created>1468208415003</created>
       <option name="number" value="00013" />
@@ -2630,7 +2624,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469241581980</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="13.21 Saved subtitle visibility across rotations. Also wrapped updateSubtitle() method's call to activity.getSupportActionBar within a null check.">
+      <created>1469243618738</created>
+      <option name="number" value="00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1469243618738</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="ToolWindowManager">
