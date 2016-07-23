@@ -35,7 +35,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
+    <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...).">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
@@ -81,10 +81,12 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47515705">
-              <caret line="96" column="50" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.34723017">
+              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
               <folding>
-                <element signature="e#3637#3684#0" expanded="true" />
+                <element signature="e#2635#2657#0" expanded="true" />
+                <element signature="e#2707#2729#0" expanded="true" />
+                <element signature="e#4311#4358#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1766,7 +1768,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
-    <option name="width" value="2282" />
+    <option name="width" value="2277" />
     <option name="height" value="2091" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -2325,12 +2327,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00007" summary="Completed CrimeLab through Listing 9.3">
-      <created>1467921828404</created>
-      <option name="number" value="00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1467921828404</updated>
-    </task>
     <task id="LOCAL-00008" summary="Completed the SingleFragmentActivity implemntation">
       <created>1468200340852</created>
       <option name="number" value="00008" />
@@ -2619,11 +2615,17 @@
       <option name="project" value="LOCAL" />
       <updated>1469212751615</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...).">
+      <created>1469215636722</created>
+      <option name="number" value="00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1469215636722</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="0" width="2282" height="2091" extended-state="0" />
+    <frame x="-11" y="0" width="2277" height="2091" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2633,7 +2635,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286908" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3994429" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3091922" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26458037" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980502" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2642,7 +2644,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980502" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22785978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2283865" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299909" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2669,7 +2671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Listing 10.6...wrote a newInstance(UUID) method." />
     <MESSAGE value="Update to retrieve UUID from new fragment arguments." />
     <MESSAGE value="Updated to reload the list when returning from a CrimeActivity." />
     <MESSAGE value="Listing 11.5 completed. Added CrimePagerActivity to manifest deleted CrimeActivity." />
@@ -2694,7 +2695,8 @@
     <MESSAGE value="Updated compile SDK version and dependencies to 24.1.1" />
     <MESSAGE value="Updated compile and target SDK version and dependencies to 24.1.1" />
     <MESSAGE value="13.14 Added &quot;Show Subtitle&quot; action item." />
-    <option name="LAST_COMMIT_MESSAGE" value="13.14 Added &quot;Show Subtitle&quot; action item." />
+    <MESSAGE value="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...)." />
+    <option name="LAST_COMMIT_MESSAGE" value="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3134,10 +3136,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47515705">
-          <caret line="96" column="50" selection-start-line="96" selection-start-column="50" selection-end-line="96" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.34723017">
+          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
           <folding>
-            <element signature="e#3637#3684#0" expanded="true" />
+            <element signature="e#2635#2657#0" expanded="true" />
+            <element signature="e#2707#2729#0" expanded="true" />
+            <element signature="e#4311#4358#0" expanded="true" />
           </folding>
         </state>
       </provider>

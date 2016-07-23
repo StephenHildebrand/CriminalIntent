@@ -27,6 +27,8 @@ public class CrimeListFragment extends Fragment {
     private RecyclerView mCrimeRecyclerView;
     /** An Adapter for managing Crimes. */
     private CrimeAdapter mAdapter;
+    /** True if the subtitle is visible, false if not visible. */
+    private boolean mSubtitleVisible;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,8 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
-     * Creates the options menu by inflating the menu in fragment_crime_list.
+     * Creates the options menu by inflating the menu in fragment_crime_list. Also triggers a
+     * re-creation of the action items when the user presses on the Show Subtitle action item.
      *
      * @param menu The menu instance to populate
      * @param inflater The object to inflate the menu
@@ -64,6 +67,13 @@ public class CrimeListFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.fragment_crime_list, menu);
+
+        // Determine whether to show the Hide or Show Subtitle action button.
+        MenuItem subtitleItem = menu.findItem(R.id.menu_item_show_subtitle);
+        if (mSubtitleVisible)
+            subtitleItem.setTitle(R.string.hide_subtitle);
+        else
+            subtitleItem.setTitle(R.string.show_subtitle);
     }
 
     /**
@@ -75,13 +85,15 @@ public class CrimeListFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_item_new_crime:          // New Crime action button.
+            case R.id.menu_item_new_crime:      // New Crime action button.
                 Crime crime = new Crime();
                 CrimeLab.get(getActivity()).addCrime(crime);
                 Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
                 startActivity(intent);
                 return true;
-            case R.id.menu_item_show_subtitle:      // Show Subtitle action button
+            case R.id.menu_item_show_subtitle:  // Show Subtitle action button
+                mSubtitleVisible = !mSubtitleVisible;   // Switch the SubtitleVisible variable
+                getActivity().invalidateOptionsMenu();
                 updateSubtitle();
                 return true;
             default:    // Calls the superclass if the item ID isn't in your implementation.
