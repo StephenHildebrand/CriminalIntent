@@ -27,6 +27,8 @@ import java.util.List;
 public class CrimeListFragment extends Fragment {
     /** Key for tracking the subtitle visibility across instances. */
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
+
+
     /** A RecyclerView for viewing the list of Crimes. */
     private RecyclerView mCrimeRecyclerView;
     /** An Adapter for managing Crimes. */
@@ -44,12 +46,13 @@ public class CrimeListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
-        mCrimeRecyclerView = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
+
+        mCrimeRecyclerView = (RecyclerView)view.findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         // Retrieve the savedInstanceState, if there is one.
         if (savedInstanceState != null)
-            savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
+            mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
 
         updateUI();
         return view;

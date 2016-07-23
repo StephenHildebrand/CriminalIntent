@@ -37,6 +37,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
     <ignored path="CriminalIntent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -80,12 +81,12 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7492861">
-              <caret line="138" column="65" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.47515705">
+              <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
               <folding>
-                <element signature="e#3365#3387#0" expanded="true" />
-                <element signature="e#3437#3459#0" expanded="true" />
-                <element signature="e#5041#5088#0" expanded="true" />
+                <element signature="e#3386#3408#0" expanded="true" />
+                <element signature="e#3458#3480#0" expanded="true" />
+                <element signature="e#5062#5109#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2336,12 +2337,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00013" summary="Modified CrimeListFragment to use the newly created fragment_crime_list View.">
-      <created>1468208415003</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1468208415003</updated>
-    </task>
     <task id="LOCAL-00014" summary="Defined the ViewHolder.">
       <created>1468282602702</created>
       <option name="number" value="00014" />
@@ -2630,7 +2625,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469243618738</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="13.21 Saved subtitle visibility across rotations. Also wrapped updateSubtitle() method's call to activity.getSupportActionBar within a null check.">
+      <created>1469243624331</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1469243624331</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3147,12 +3148,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7492861">
-          <caret line="138" column="65" selection-start-line="138" selection-start-column="65" selection-end-line="138" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.47515705">
+          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
           <folding>
-            <element signature="e#3365#3387#0" expanded="true" />
-            <element signature="e#3437#3459#0" expanded="true" />
-            <element signature="e#5041#5088#0" expanded="true" />
+            <element signature="e#3386#3408#0" expanded="true" />
+            <element signature="e#3458#3480#0" expanded="true" />
+            <element signature="e#5062#5109#0" expanded="true" />
           </folding>
         </state>
       </provider>
