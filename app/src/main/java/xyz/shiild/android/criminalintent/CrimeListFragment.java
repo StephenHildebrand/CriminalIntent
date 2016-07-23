@@ -138,6 +138,7 @@ public class CrimeListFragment extends Fragment {
             // First must determine which position has changed and reload the correct item.
 //            mAdapter.notifyItemChanged(mPosition);
         }
+        updateSubtitle(); // Update the subtitle text when returning to CrimeListActivity.
     }
 
     /**
