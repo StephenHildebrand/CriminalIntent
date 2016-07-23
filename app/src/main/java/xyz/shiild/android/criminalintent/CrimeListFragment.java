@@ -110,8 +110,12 @@ public class CrimeListFragment extends Fragment {
         int crimeCount = crimeLab.getCrimes().size();
         // Generate the subtitle string with replacement values for the placeholders.
         String subtitle = getString(R.string.subtitle_format, crimeCount);
+        // Respect the mSubtitleVisible member variable when showing/hiding the subtitle toolbar.
+        if (!mSubtitleVisible)
+            subtitle = null;
         // Cast the activity hosting CrimeListFragment to an AppCompatActivity and set it.
         AppCompatActivity activity = (AppCompatActivity)getActivity();
+
         activity.getSupportActionBar().setSubtitle(subtitle);
     }
 

@@ -35,7 +35,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...).">
+    <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="13.19">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
@@ -81,8 +81,8 @@
       <file leaf-file-name="CrimeListFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34723017">
-              <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.52998286">
+              <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
               <folding>
                 <element signature="e#2635#2657#0" expanded="true" />
                 <element signature="e#2707#2729#0" expanded="true" />
@@ -2327,12 +2327,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00008" summary="Completed the SingleFragmentActivity implemntation">
-      <created>1468200340852</created>
-      <option name="number" value="00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1468200340852</updated>
-    </task>
     <task id="LOCAL-00009" summary="Implemented a new controller class CrimeListActivity as subclass of SingleFragmentActivity.">
       <created>1468200449522</created>
       <option name="number" value="00009" />
@@ -2621,7 +2615,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469215636722</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="13.18 Updated MenuItem for hiding/showing subtitle in toolbar.">
+      <created>1469235017453</created>
+      <option name="number" value="00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1469235017453</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2671,7 +2671,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Update to retrieve UUID from new fragment arguments." />
     <MESSAGE value="Updated to reload the list when returning from a CrimeActivity." />
     <MESSAGE value="Listing 11.5 completed. Added CrimePagerActivity to manifest deleted CrimeActivity." />
     <MESSAGE value="11.6 Set initial pager item to correct display correct item." />
@@ -2696,7 +2695,8 @@
     <MESSAGE value="Updated compile and target SDK version and dependencies to 24.1.1" />
     <MESSAGE value="13.14 Added &quot;Show Subtitle&quot; action item." />
     <MESSAGE value="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...)." />
-    <option name="LAST_COMMIT_MESSAGE" value="13.16 Defined the updateSubtitle() method and added a call to it when selected in onOptionsItemSelected(...)." />
+    <MESSAGE value="13.18 Updated MenuItem for hiding/showing subtitle in toolbar." />
+    <option name="LAST_COMMIT_MESSAGE" value="13.18 Updated MenuItem for hiding/showing subtitle in toolbar." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3136,8 +3136,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34723017">
-          <caret line="84" column="13" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.52998286">
+          <caret line="99" column="57" selection-start-line="99" selection-start-column="57" selection-end-line="99" selection-end-column="57" />
           <folding>
             <element signature="e#2635#2657#0" expanded="true" />
             <element signature="e#2707#2729#0" expanded="true" />
