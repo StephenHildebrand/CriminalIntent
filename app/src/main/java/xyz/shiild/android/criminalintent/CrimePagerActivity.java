@@ -46,6 +46,7 @@ public class CrimePagerActivity extends AppCompatActivity {
      * it to do its job with fragments that getItem(int) returns, it needs to be able to add them
      * to your activity, which is why it needs your FragmentManager.
      *
+     *
      * @param savedInstanceState Bundle from the previous instance
      */
     @Override

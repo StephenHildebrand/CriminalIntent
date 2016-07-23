@@ -2,6 +2,8 @@ package xyz.shiild.android.criminalintent;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,6 +25,8 @@ import java.util.List;
  * @version 7/10/2016
  */
 public class CrimeListFragment extends Fragment {
+    /** Key for tracking the subtitle visibility across instances. */
+    private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
     /** A RecyclerView for viewing the list of Crimes. */
     private RecyclerView mCrimeRecyclerView;
     /** An Adapter for managing Crimes. */
@@ -43,6 +47,10 @@ public class CrimeListFragment extends Fragment {
         mCrimeRecyclerView = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        // Retrieve the savedInstanceState, if there is one.
+        if (savedInstanceState != null)
+            savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
+
         updateUI();
         return view;
     }
@@ -54,6 +62,17 @@ public class CrimeListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         updateUI();
+    }
+
+    /**
+     * Save the mSubtitleVisible instance variable across rotations.
+     *
+     * @param outState The instance state to load.
+     */
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
     }
 
     /**
@@ -116,7 +135,8 @@ public class CrimeListFragment extends Fragment {
         // Cast the activity hosting CrimeListFragment to an AppCompatActivity and set it.
         AppCompatActivity activity = (AppCompatActivity)getActivity();
 
-        activity.getSupportActionBar().setSubtitle(subtitle);
+        if (activity.getSupportActionBar() != null)
+            activity.getSupportActionBar().setSubtitle(subtitle);
     }
 
     /**
@@ -142,7 +162,6 @@ public class CrimeListFragment extends Fragment {
     }
 
     /**
-     *
      * CrimeHolder is a private inner ViewHolder class for RecyclerView. It finds the title TextView,
      * date TextView and solved CheckBox. By storing the results of calls to findViewById(int)
      * when called in createViewHolder(...), the work is already done for onBindViewHolder(...)
