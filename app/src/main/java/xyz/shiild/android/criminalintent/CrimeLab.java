@@ -41,6 +41,14 @@ public class CrimeLab {
     }
 
     /**
+     * Deletes the crime.
+     * @param c The crime to delete.
+     */
+    public void deleteCrime(Crime c) {
+        mCrimes.remove(c);
+    }
+
+    /**
      * Returns the list of crimes.
      * @return The list of crimes.
      */
