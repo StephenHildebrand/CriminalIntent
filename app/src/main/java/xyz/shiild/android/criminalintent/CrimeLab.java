@@ -82,7 +82,11 @@ public class CrimeLab {
     }
 
     /**
-     * A method to update the rows in the database.
+     * A method to update the rows in the database. The uuidString is not directly put into the
+     * where clause in case the String itself might contain SQL code. If that String were to be
+     * put directly in your query it could change the meaning of your query or even later the
+     * database. This is called a SQL injection attack. If you use ?, then the code will act as
+     * intended and treat it as a String value, not as code.
      * @param crime The crime to update.
      */
     public void updateCrime(Crime crime) {

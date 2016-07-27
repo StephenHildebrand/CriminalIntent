@@ -77,6 +77,16 @@ public class CrimeFragment extends Fragment {
     }
 
     /**
+     * Updates CrimeLab's copy of the Crime in order to write out the Crime instances when
+     * CrimeFragment is done.
+     */
+    @Override
+    public void onPause() {
+        super.onPause();
+        CrimeLab.get(getActivity()).updateCrime(mCrime);
+    }
+
+    /**
      * The onCreateView method is where you inflate the layout for the fragment's view and return
      * the inflated View to the hosting activity.
      *
