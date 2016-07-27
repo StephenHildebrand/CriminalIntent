@@ -28,7 +28,6 @@ public class CrimeListFragment extends Fragment {
     /** Key for tracking the subtitle visibility across instances. */
     private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
 
-
     /** A RecyclerView for viewing the list of Crimes. */
     private RecyclerView mCrimeRecyclerView;
     /** An Adapter for managing Crimes. */
