@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <!-- Original: Theme.AppCompat.Light.DarkActionBar. -->
     <style name="AppTheme"
-           parent="Theme.AppCompat.DayNight">
+           parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
