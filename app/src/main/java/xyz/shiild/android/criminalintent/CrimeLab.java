@@ -1,10 +1,13 @@
 package xyz.shiild.android.criminalintent;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+import xyz.shiild.android.criminalintent.database.CrimeBaseHelper;
 
 /**
  * A centralized data stash for Crime objects.
@@ -17,12 +20,19 @@ public class CrimeLab {
     private static CrimeLab sCrimeLab;
     /** A list of crimes. */
     private List<Crime> mCrimes;
+    /** Context instance variable...to be used in chapter 16. */
+    private Context mContext;
+    /** Storage for the crime database. */
+    private SQLiteDatabase mDatabase;
 
     /**
-     * Private constructor for the singleton CrimeLab.
+     * Private constructor for the singleton CrimeLab. Retrieves the current application context,
+     * then calls getWritableDatabase to open/initialize the database.
      * @param context The context to initialize with.
      */
     private CrimeLab(Context context) {
+        mContext = context.getApplicationContext();
+        mDatabase = new CrimeBaseHelper(mContext).getWritableDatabase();
         mCrimes = new ArrayList<>();
     }
 

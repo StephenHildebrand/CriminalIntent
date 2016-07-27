@@ -11,11 +11,12 @@ public class CrimeDbSchema {
      * the moving pieces of the table definition.
      */
     public static final class CrimeTable {
+
         /** The name of the table in the database. */
         public static final String NAME = "crimes";
 
         /**
-         *
+         * Inner class describing the columns of the table.
          */
         public static final class Cols {
             public static final String UUID = "uuid";
