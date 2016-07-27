@@ -88,8 +88,10 @@ public class CrimeLab {
     public void updateCrime(Crime crime) {
         String uuidString = crime.getId().toString();
         ContentValues values = getContentValues(crime);
+        // Also specifies which rows should be updated by building a where clause (the 3rd arg),
+        // and then specifying values for the arguments in the where clause
         mDatabase.update(CrimeTable.NAME, values, CrimeTable.Cols.UUID
-                            + " = ?", new String[] {uuidString});
+                + " = ?", new String[] { uuidString });
     }
 
     /**

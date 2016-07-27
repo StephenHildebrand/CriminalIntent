@@ -113,8 +113,8 @@
           <file leaf-file-name="CrimeLab.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeLab.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.63900083">
-                  <caret line="85" column="40" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+                <state vertical-scroll-proportion="0.56164384">
+                  <caret line="91" column="75" selection-start-line="91" selection-start-column="75" selection-end-line="91" selection-end-column="75" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#2098#2099#0" expanded="true" />
@@ -2437,12 +2437,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00027" summary="Update to retrieve UUID from new fragment arguments.">
-      <created>1468525919807</created>
-      <option name="number" value="00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1468525919807</updated>
-    </task>
     <task id="LOCAL-00028" summary="Updated to reload the list when returning from a CrimeActivity.">
       <created>1468527851470</created>
       <option name="number" value="00028" />
@@ -2731,7 +2725,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469656483237</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="14.10 Defined method to update a crime in the database.">
+      <created>1469658208733</created>
+      <option name="number" value="00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1469658208734</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2781,7 +2781,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
-    <MESSAGE value="Generated plus sign clipart for a menu add button." />
     <MESSAGE value="Switched to reference newly generated local menu_add resource." />
     <MESSAGE value="13.9 Define onCreateOptionsMenu and OnCreate with setHasOptionsMenu(true)." />
     <MESSAGE value="13.11 Defined method to add a crime and removed random crimes." />
@@ -2806,7 +2805,8 @@
     <MESSAGE value="Defined CrimeTable and the table columsn in Cols." />
     <MESSAGE value="14.6 Created the crime table." />
     <MESSAGE value="14.8 Created a ContentValues." />
-    <option name="LAST_COMMIT_MESSAGE" value="14.8 Created a ContentValues." />
+    <MESSAGE value="14.10 Defined method to update a crime in the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="14.10 Defined method to update a crime in the database." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -3237,8 +3237,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeLab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63900083">
-          <caret line="85" column="40" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.56164384">
+          <caret line="91" column="75" selection-start-line="91" selection-start-column="75" selection-end-line="91" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2098#2099#0" expanded="true" />
