@@ -129,12 +129,18 @@ public class CrimeListFragment extends Fragment {
      */
     private void updateSubtitle() {
         CrimeLab crimeLab = CrimeLab.get(getActivity());
-        int crimeCount = crimeLab.getCrimes().size();
+//        int crimeCount = crimeLab.getCrimes().size();
         // Generate the subtitle string with replacement values for the placeholders.
-        String subtitle = getString(R.string.subtitle_format, crimeCount);
+//        String subtitle = getString(R.string.subtitle_format, crimeCount);
+
+        // Implement plural string resources.
+        int crimeSize = crimeLab.getCrimes().size();
+        String subtitle = getResources().getQuantityString(R.plurals.subtitle_plural, crimeSize, crimeSize);
+
         // Respect the mSubtitleVisible member variable when showing/hiding the subtitle toolbar.
         if (!mSubtitleVisible)
             subtitle = null;
+
         // Cast the activity hosting CrimeListFragment to an AppCompatActivity and set it.
         AppCompatActivity activity = (AppCompatActivity)getActivity();
 
