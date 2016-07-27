@@ -10,13 +10,15 @@ import xyz.shiild.android.criminalintent.Crime;
 import xyz.shiild.android.criminalintent.database.CrimeDbSchema.CrimeTable;
 
 /**
- * SQLiteOpenHelper is a class designed to minimize work of opening a SQLiteDatabase
+ * SQLiteOpenHelper is a class designed to minimize the work of opening a SQLiteDatabase.
+ *
  * @author Stephen Hildebrand
  * @version 7/27/2016
  */
 public class CrimeBaseHelper extends SQLiteOpenHelper {
-
+    /** The version number for comparison. */
     private static final int VERSION = 1;
+    /** The name of the database. */
     private static final String DATABASE_NAME = "crimeBase.db";
 
     public CrimeBaseHelper(Context context) {
@@ -26,7 +28,7 @@ public class CrimeBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + CrimeTable.NAME + "("
-                + "_id integer primary key autoincrement, "
+                + " _id integer primary key autoincrement, "
                 + CrimeTable.Cols.UUID + ", "
                 + CrimeTable.Cols.TITLE + ", "
                 + CrimeTable.Cols.DATE + ", "
