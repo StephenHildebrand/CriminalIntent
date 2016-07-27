@@ -42,11 +42,15 @@ public class CrimeLab {
     }
 
     /**
-     * Add a new crime.
+     * Add a new crime. Gets the crime's ContentValues then inserts the values into the specified
+     * table (via CrimeTable.NAME).
      * @param c The crime to add.
      */
     public void addCrime(Crime c) {
-
+        ContentValues values = getContentValues(c);
+        // CrimeTable.NAME is the table you want to insert into.
+        // values is the data that you want to put in.
+        mDatabase.insert(CrimeTable.NAME, null, values);
     }
 
     /**
@@ -75,6 +79,17 @@ public class CrimeLab {
 //            if (crime.getId().equals(id))
 //                return crime;
         return null;
+    }
+
+    /**
+     * A method to update the rows in the database.
+     * @param crime The crime to update.
+     */
+    public void updateCrime(Crime crime) {
+        String uuidString = crime.getId().toString();
+        ContentValues values = getContentValues(crime);
+        mDatabase.update(CrimeTable.NAME, values, CrimeTable.Cols.UUID
+                            + " = ?", new String[] {uuidString});
     }
 
     /**
