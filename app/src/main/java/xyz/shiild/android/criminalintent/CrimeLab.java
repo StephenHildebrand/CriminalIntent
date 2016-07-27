@@ -24,19 +24,28 @@ public class CrimeLab {
      */
     private CrimeLab(Context context) {
         mCrimes = new ArrayList<>();
-        // Initialize the list with 100 Crimes.
-        for (int i = 0; i < 100; i++) {
-            Crime crime = new Crime();
-            crime.setTitle("Crime #" + i);
-            crime.setSolved(i % 2 == 0); // Every other crime set as solved.
-            mCrimes.add(crime);
-        }
     }
 
     public static CrimeLab get(Context context) {
         if (sCrimeLab == null)
             sCrimeLab = new CrimeLab(context);
         return sCrimeLab;
+    }
+
+    /**
+     * Add a new crime.
+     * @param c The crime to add.
+     */
+    public void addCrime(Crime c) {
+        mCrimes.add(c);
+    }
+
+    /**
+     * Deletes the crime.
+     * @param c The crime to delete.
+     */
+    public void deleteCrime(Crime c) {
+        mCrimes.remove(c);
     }
 
     /**

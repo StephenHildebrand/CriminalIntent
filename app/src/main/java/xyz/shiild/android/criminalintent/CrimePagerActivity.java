@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +17,7 @@ import java.util.UUID;
  * @author Stephen
  * @version 7/15/2016
  */
-public class CrimePagerActivity extends FragmentActivity {
+public class CrimePagerActivity extends AppCompatActivity {
     /** Extra for the crime ID. */
     private static final String EXTRA_CRIME_ID = "xyz.shiild.android.criminalintent.crime_id";
     /** The ViewPager for the Crimes. */
@@ -44,6 +45,7 @@ public class CrimePagerActivity extends FragmentActivity {
      * FragmentStatePagerAdapter is your agent for managing the conversation with ViewPager. For
      * it to do its job with fragments that getItem(int) returns, it needs to be able to add them
      * to your activity, which is why it needs your FragmentManager.
+     *
      *
      * @param savedInstanceState Bundle from the previous instance
      */

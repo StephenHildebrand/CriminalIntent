@@ -2,10 +2,16 @@ package xyz.shiild.android.criminalintent;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -19,16 +25,34 @@ import java.util.List;
  * @version 7/10/2016
  */
 public class CrimeListFragment extends Fragment {
+    /** Key for tracking the subtitle visibility across instances. */
+    private static final String SAVED_SUBTITLE_VISIBLE = "subtitle";
+
+
     /** A RecyclerView for viewing the list of Crimes. */
     private RecyclerView mCrimeRecyclerView;
     /** An Adapter for managing Crimes. */
     private CrimeAdapter mAdapter;
+    /** True if the subtitle is visible, false if not visible. */
+    private boolean mSubtitleVisible;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Tell FragmentManager that CrimeListFragment needs to receive menu callbacks.
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_crime_list, container, false);
-        mCrimeRecyclerView = (RecyclerView) view.findViewById(R.id.crime_recycler_view);
+
+        mCrimeRecyclerView = (RecyclerView)view.findViewById(R.id.crime_recycler_view);
         mCrimeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        // Retrieve the savedInstanceState, if there is one.
+        if (savedInstanceState != null)
+            mSubtitleVisible = savedInstanceState.getBoolean(SAVED_SUBTITLE_VISIBLE);
 
         updateUI();
         return view;
@@ -41,6 +65,81 @@ public class CrimeListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         updateUI();
+    }
+
+    /**
+     * Save the mSubtitleVisible instance variable across rotations.
+     *
+     * @param outState The instance state to load.
+     */
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(SAVED_SUBTITLE_VISIBLE, mSubtitleVisible);
+    }
+
+    /**
+     * Creates the options menu by inflating the menu in fragment_crime_list. Also triggers a
+     * re-creation of the action items when the user presses on the Show Subtitle action item.
+     *
+     * @param menu The menu instance to populate
+     * @param inflater The object to inflate the menu
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_crime_list, menu);
+
+        // Determine whether to show the Hide or Show Subtitle action button.
+        MenuItem subtitleItem = menu.findItem(R.id.menu_item_show_subtitle);
+        if (mSubtitleVisible)
+            subtitleItem.setTitle(R.string.hide_subtitle);
+        else
+            subtitleItem.setTitle(R.string.show_subtitle);
+    }
+
+    /**
+     * Handle selection of menu items (currently only the add crime option).
+     *
+     * @param item  The selected menu item.
+     * @return  True to indicate that no further processing is necessary
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_new_crime:      // New Crime action button.
+                Crime crime = new Crime();
+                CrimeLab.get(getActivity()).addCrime(crime);
+                Intent intent = CrimePagerActivity.newIntent(getActivity(), crime.getId());
+                startActivity(intent);
+                return true;
+            case R.id.menu_item_show_subtitle:  // Show Subtitle action button
+                mSubtitleVisible = !mSubtitleVisible;   // Switch the SubtitleVisible variable
+                getActivity().invalidateOptionsMenu();
+                updateSubtitle();
+                return true;
+            default:    // Calls the superclass if the item ID isn't in your implementation.
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    /**
+     * Sets the subtitle of the toolbar. The subtitle displays the number of crimes in
+     * CriminalIntent. Called when the user presses on the new subtitle action item.
+     */
+    private void updateSubtitle() {
+        CrimeLab crimeLab = CrimeLab.get(getActivity());
+        int crimeCount = crimeLab.getCrimes().size();
+        // Generate the subtitle string with replacement values for the placeholders.
+        String subtitle = getString(R.string.subtitle_format, crimeCount);
+        // Respect the mSubtitleVisible member variable when showing/hiding the subtitle toolbar.
+        if (!mSubtitleVisible)
+            subtitle = null;
+        // Cast the activity hosting CrimeListFragment to an AppCompatActivity and set it.
+        AppCompatActivity activity = (AppCompatActivity)getActivity();
+
+        if (activity.getSupportActionBar() != null)
+            activity.getSupportActionBar().setSubtitle(subtitle);
     }
 
     /**
@@ -62,10 +161,10 @@ public class CrimeListFragment extends Fragment {
             // First must determine which position has changed and reload the correct item.
 //            mAdapter.notifyItemChanged(mPosition);
         }
+        updateSubtitle(); // Update the subtitle text when returning to CrimeListActivity.
     }
 
     /**
-     *
      * CrimeHolder is a private inner ViewHolder class for RecyclerView. It finds the title TextView,
      * date TextView and solved CheckBox. By storing the results of calls to findViewById(int)
      * when called in createViewHolder(...), the work is already done for onBindViewHolder(...)

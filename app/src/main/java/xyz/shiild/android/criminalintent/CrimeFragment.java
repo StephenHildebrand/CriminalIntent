@@ -10,6 +10,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -69,11 +72,14 @@ public class CrimeFragment extends Fragment {
         UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
         // Use the retrieved UUID to fetch theCrime from CrimeLab.
         mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
+        // Tell FragmentManager that CrimeFragment has a menu.
+        setHasOptionsMenu(true);
     }
 
     /**
      * The onCreateView method is where you inflate the layout for the fragment's view and return
      * the inflated View to the hosting activity.
+     *
      * @param inflater Used to inflate the layout.
      * @param container The View's parent, used to inflate the layout.
      * @param savedInstanceState Contains the data used to recreated the View from a saved state
@@ -134,6 +140,32 @@ public class CrimeFragment extends Fragment {
         });
 
         return v;
+    }
+
+    /**
+     * Create the options menu by inflating fragment_crime to show the delete crime action button.
+     *
+     * @param menu The menu instance to populate.
+     * @param inflater The object to inflate the menu.
+     */
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.fragment_crime, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_delete_crime:
+                CrimeLab.get(getActivity()).deleteCrime(mCrime);
+                // Pop the user back to the previous activity by calling the finish method on
+                // CrimeFragment's hosting activity.
+                getActivity().finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     /**
