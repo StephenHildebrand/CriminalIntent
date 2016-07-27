@@ -38,7 +38,6 @@
     <list default="true" id="f034197f-638a-4087-a9fd-324b0f8e6aea" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/database/CrimeDbSchema.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/CrimeListFragment.java" />
     </list>
     <ignored path="CriminalIntent.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -95,7 +94,7 @@
             <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/database/CrimeDbSchema.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.4755245">
-                  <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+                  <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -2438,12 +2437,6 @@
       <option name="number" value="Default" />
       <updated>1467319377582</updated>
     </task>
-    <task id="LOCAL-00022" summary="Changed RelativelyLayout layout_height attributes to wrap_content to fix large spacing between list items.">
-      <created>1468368040786</created>
-      <option name="number" value="00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1468368040786</updated>
-    </task>
     <task id="LOCAL-00023" summary="Completed Chapter 9.">
       <created>1468368213708</created>
       <option name="number" value="00023" />
@@ -2732,7 +2725,13 @@
       <option name="project" value="LOCAL" />
       <updated>1469638882995</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Added getQuantityString method to correctly pluralize the string.">
+      <created>1469644385849</created>
+      <option name="number" value="00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1469644385849</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3241,7 +3240,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/xyz/shiild/android/criminalintent/database/CrimeDbSchema.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4755245">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
       </provider>
