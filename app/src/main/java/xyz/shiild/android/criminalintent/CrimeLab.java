@@ -56,11 +56,16 @@ public class CrimeLab {
     }
 
     /**
-     * Deletes the crime.
+     * Deletes the crime. The uuidString is not directly put into the where clause to avoid
+     * SQL injection. So the where clause includes a " = ?" to check that the values specified
+     * are String values. As a result, rather than pass in uuidString directly it is passed in
+     * as a String[].
      * @param c The crime to delete.
      */
     public void deleteCrime(Crime c) {
-//        mCrimes.remove(c);
+        String uuidString = c.getId().toString();
+        mDatabase.delete(CrimeTable.NAME, CrimeTable.Cols.UUID
+                + " = ?", new String[] { uuidString });
     }
 
     /**
