@@ -60,7 +60,7 @@ public class CrimeFragment extends Fragment {
         Bundle args = new Bundle();                     // Create a bundle.
         args.putSerializable(ARG_CRIME_ID, crimeId);    // Attach the arguments it.
         CrimeFragment fragment = new CrimeFragment();   // Create a fragment instance.
-        fragment.setArguments(args);                    // Attach the arguments bundle to the it.
+        fragment.setArguments(args);                    // Attach the arguments bundle to it.
 
         return fragment;
     }

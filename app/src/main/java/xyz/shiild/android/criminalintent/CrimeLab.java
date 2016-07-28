@@ -2,6 +2,7 @@ package xyz.shiild.android.criminalintent;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
@@ -112,5 +113,19 @@ public class CrimeLab {
         values.put(CrimeTable.Cols.SOLVED, crime.isSolved() ? 1 : 0);
 
         return values;
+    }
+
+    private Cursor queryCrimes(String whereClause, String[] whereArgs) {
+        Cursor cursor = mDatabase.query(
+                CrimeTable.NAME,
+                null, // Columns - null selects all columns
+                whereClause, // Specify which columns get updated
+                whereArgs, // The arguments to update the columns with
+                null, // groupBy
+                null, // having
+                null // orderBy
+        );
+
+        return cursor;
     }
 }
