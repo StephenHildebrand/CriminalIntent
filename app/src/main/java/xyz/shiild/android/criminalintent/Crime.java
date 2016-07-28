@@ -22,7 +22,11 @@ public class Crime {
      * Crime class constructor.
      */
     public Crime() {
-        mId = UUID.randomUUID(); // Generate unique identifier.
+        this(UUID.randomUUID()); // Generate unique identifier.
+    }
+
+    public Crime(UUID id) {
+        mId = id;
         mDate = new Date(); // Current date via default Date constructor.
     }
 
