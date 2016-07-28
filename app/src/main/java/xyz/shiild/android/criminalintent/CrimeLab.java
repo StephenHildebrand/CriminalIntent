@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 import xyz.shiild.android.criminalintent.database.CrimeBaseHelper;
+import xyz.shiild.android.criminalintent.database.CrimeCursorWrapper;
 import xyz.shiild.android.criminalintent.database.CrimeDbSchema.CrimeTable;
 
 /**
@@ -63,23 +64,48 @@ public class CrimeLab {
     }
 
     /**
-     * Returns the list of crimes.
+     * Returns the list of crimes. Walks the cursor down the list of crimes and adds each
+     * Crime to a list of Crimes.
      * @return The list of crimes.
      */
     public List<Crime> getCrimes() {
-        return new ArrayList<>();
+        List<Crime> crimes = new ArrayList<>();
+        CrimeCursorWrapper cursor = queryCrimes(null, null);
+        try {
+            cursor.moveToFirst();
+            // Walk the cursor down the list of crimes
+            while (!cursor.isAfterLast()) {
+                crimes.add(cursor.getCrime());
+                cursor.moveToNext();
+            }
+        } finally {
+            cursor.close();
+        }
+        return crimes;
     }
 
     /**
-     * Searches the list of crimes for a Crime with the given ID.
+     * Searches the list of crimes for a Crime with the given ID. Only pulls the first item,
+     * if it is there.
      * @param id The ID associated with the Crime to search for.
      * @return The Crime with the given ID, or null if not found.
      */
     public Crime getCrime(UUID id) {
-//        for (Crime crime : mCrimes)
-//            if (crime.getId().equals(id))
-//                return crime;
-        return null;
+        CrimeCursorWrapper cursor = queryCrimes(
+                CrimeTable.Cols.UUID + " = ?",
+                new String[] { id.toString() }
+        );
+
+        try {
+            if (cursor.getCount() == 0) {
+                return null;
+            }
+
+            cursor.moveToFirst();
+            return cursor.getCrime();
+        } finally {
+            cursor.close();
+        }
     }
 
     /**
@@ -115,7 +141,14 @@ public class CrimeLab {
         return values;
     }
 
-    private Cursor queryCrimes(String whereClause, String[] whereArgs) {
+    /**
+     * Wraps the cursor returned from the query in a CrimeCursorWrapper, then iterates over it
+     * while calling getCrime to pull out its Crimes.
+     * @param whereClause Specifies which columns get updated.
+     * @param whereArgs The arguments to update with.
+     * @return The CrimeCursorWrapper containing the query results.
+     */
+    private CrimeCursorWrapper queryCrimes(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
                 CrimeTable.NAME,
                 null, // Columns - null selects all columns
@@ -126,6 +159,6 @@ public class CrimeLab {
                 null // orderBy
         );
 
-        return cursor;
+        return new CrimeCursorWrapper(cursor);
     }
 }
