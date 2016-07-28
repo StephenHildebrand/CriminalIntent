@@ -160,11 +160,11 @@ public class CrimeListFragment extends Fragment {
             mAdapter = new CrimeAdapter(crimes);    // Create a CrimeAdapter.
             mCrimeRecyclerView.setAdapter(mAdapter);    // Set it on the RecyclerView.
         } else {    // Reload it instead.
-            // Using notifyDataSetChanged() method is easy but extremely inefficient.
-            mAdapter.notifyDataSetChanged();
             // Use RecyclerView.Adapter's notifyItemChanged(int) to reload a single list item.
             // First must determine which position has changed and reload the correct item.
-//            mAdapter.notifyItemChanged(mPosition);
+            mAdapter.setCrimes(crimes); // Swap out the crimes that CrimeAdapter displays.
+            mAdapter.notifyDataSetChanged();
+
         }
         updateSubtitle(); // Update the subtitle text when returning to CrimeListActivity.
     }
@@ -284,6 +284,15 @@ public class CrimeListFragment extends Fragment {
         @Override
         public int getItemCount() {
             return mCrimes.size();
+        }
+
+        /**
+         * Swaps out the crimes that CrimeAdapter displays. Used in the updateUI method
+         * to refresh the view of crimes.
+         * @param crimes The list of crimes.
+         */
+        public void setCrimes(List<Crime> crimes) {
+            mCrimes = crimes;
         }
 
     }
